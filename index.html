@@ -232,6 +232,15 @@ section.ciasna{padding:64px 0}
 .boczne li a.on,.boczne li a:hover{color:var(--br);font-weight:600}
 .boczne ul ul{padding-left:14px}
 .boczne ul ul a{font-size:14.5px;color:var(--tx2)}
+.boczne{max-height:calc(100vh - 110px);overflow:auto}
+.boczne .bk{display:block;width:100%;text-align:left;background:none;border:0;padding:0 0 8px;font:600 18px Jost,sans-serif;color:var(--br);pointer-events:none}
+.boczne li.ma>ul{display:none}.boczne li.ma.otw>ul{display:block}
+.boczne .w{display:flex;align-items:stretch;border-bottom:1px dashed #e2d6c9}
+.boczne .w a{flex:1;border-bottom:0!important}
+.boczne .rz{flex:0 0 36px;border:0;background:none;cursor:pointer;position:relative;color:var(--br)}
+.boczne .rz::before,.boczne .rz::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.6px;background:currentColor;transform:translate(-50%,-50%)}
+.boczne .rz::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .2s}
+.boczne li.otw>.w .rz::after{transform:translate(-50%,-50%) rotate(0)}
 .kat{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .kafel{background:#fff;border:1px solid #e3dfda;border-radius:6px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:border-color .2s,transform .2s}
 .kafel:hover{border-color:var(--br);transform:translateY(-2px)}
@@ -334,7 +343,13 @@ section.ciasna{padding:64px 0}
 .lista-n h3{font-size:19px;margin-bottom:4px;padding-top:6px}
 @media (max-width:1020px){
  .uk{grid-template-columns:1fr;gap:28px}
- .boczne{display:none}
+ .boczne{position:static;max-height:none;padding:0}
+ .boczne .bk{pointer-events:auto;padding:15px 18px;display:flex;justify-content:space-between;align-items:center}
+ .boczne .bk::after{content:"";width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-top:-4px;transition:transform .2s}
+ .boczne.otw .bk::after{transform:rotate(-135deg);margin-top:4px}
+ .boczne .korzen{display:none;padding:0 18px 12px}
+ .boczne.otw .korzen{display:block}
+ .boczne .rz{flex-basis:46px}
  .kat{grid-template-columns:repeat(3,1fr)}
  .prod{grid-template-columns:1fr 1fr}
  .karta,.opis-p,.kto{grid-template-columns:1fr;gap:34px}
@@ -357,7 +372,6 @@ section.ciasna{padding:64px 0}
  .drzewo{columns:1}
  .dwie{grid-template-columns:1fr}
  .miniatury{grid-template-columns:repeat(4,1fr)}
- .boczne{padding:16px 18px}
 }
 /* wersja 2: jasna, nowoczesna szata, brąz z logo jako akcent */
 :root{--tlo:#faf8f5;--tlo2:#f2ede6;--linia:#e7e0d7}
@@ -673,7 +687,7 @@ footer{background:#2b1b0d}
   <span class="etyk">Sklep</span>
   <h2>Kategorie produktów</h2>
   <p class="lead">Ten sam podział na kategorie i podkategorie, który znają Państwa klienci, teraz z cenami, koszykiem, ulubionymi i zapytaniem przy każdym produkcie.</p>
-  <div class="kat" style="margin-top:36px"><a class="kafel" href="sklep-dla-restauracji-i-hoteli.html"><img src="img/menu-480.webp" srcset="img/menu-480.webp 480w, img/menu-900.webp 900w" sizes="(min-width:1020px) 290px, (min-width:641px) 31vw, 46vw" width="480" height="480" loading="lazy" decoding="async" alt="Galanteria dla restauracji i hoteli"><div class="t"><h3>Galanteria dla restauracji i hoteli</h3><small>karty menu, płatniki, księgi rezerwacji</small></div></a><a class="kafel" href="sklep-teczki.html"><img src="img/teczka-480.webp" srcset="img/teczka-480.webp 480w, img/teczka-900.webp 900w" sizes="(min-width:1020px) 290px, (min-width:641px) 31vw, 46vw" width="480" height="480" loading="lazy" decoding="async" alt="Teczki"><div class="t"><h3>Teczki</h3><small>ofertówki, konferencyjne, skórzane</small></div></a><a class="kafel" href="sklep-organizery.html"><img src="img/organizer-480.webp" srcset="img/organizer-480.webp 480w, img/organizer-900.webp 900w" sizes="(min-width:1020px) 290px, (min-width:641px) 31vw, 46vw" width="480" height="480" loading="lazy" decoding="async" alt="Organizery"><div class="t"><h3>Organizery</h3><small>A-4, A-5, standard, mini, mikro</small></div></a><a class="kafel" href="sklep-kalendarze.html"><img src="img/kalendarz-480.webp" srcset="img/kalendarz-480.webp 480w, img/kalendarz-900.webp 900w" sizes="(min-width:1020px) 290px, (min-width:641px) 31vw, 46vw" width="480" height="480" loading="lazy" decoding="async" alt="Kalendarze"><div class="t"><h3>Kalendarze</h3><small>oprawa drukowana, ekoskóra i skóra</small></div></a><a class="kafel" href="sklep-albumy.html"><img src="img/album-czerwony-480.webp" srcset="img/album-czerwony-480.webp 480w, img/album-czerwony-900.webp 900w" sizes="(min-width:1020px) 290px, (min-width:641px) 31vw, 46vw" width="480" height="480" loading="lazy" decoding="async" alt="Albumy"><div class="t"><h3>Albumy</h3><small>tradycyjne i ofertowe</small></div></a><a class="kafel" href="sklep-kroniki.html"><img src="img/ksiega-480.webp" srcset="img/ksiega-480.webp 480w, img/ksiega-700.webp 700w" sizes="(min-width:1020px) 290px, (min-width:641px) 31vw, 46vw" width="480" height="480" loading="lazy" decoding="async" alt="Kroniki, księgi"><div class="t"><h3>Kroniki, księgi</h3><small>kroniki, księgi pamiątkowe i gości</small></div></a><a class="kafel" href="sklep-okladki.html"><img src="img/dyplom-400.webp" srcset="img/dyplom-400.webp 400w" sizes="(min-width:1020px) 290px, (min-width:641px) 31vw, 46vw" width="400" height="400" loading="lazy" decoding="async" alt="Okładki, tubusy"><div class="t"><h3>Okładki, tubusy</h3><small>okładki i tubusy na dyplomy</small></div></a><a class="kafel" href="sklep-etui.html"><img src="img/etui-cd-400.webp" srcset="img/etui-cd-400.webp 400w" sizes="(min-width:1020px) 290px, (min-width:641px) 31vw, 46vw" width="400" height="400" loading="lazy" decoding="async" alt="Etui"><div class="t"><h3>Etui</h3><small>na dokumenty, legitymacje, płyty</small></div></a></div>
+  <div class="kat" style="margin-top:36px"><a class="kafel" href="sklep-okladki.html"><img src="img/dyplom-400.webp" srcset="img/dyplom-400.webp 400w" sizes="(min-width:1020px) 290px, (min-width:641px) 31vw, 46vw" width="400" height="400" loading="lazy" decoding="async" alt="Okładki, tubusy"><div class="t"><h3>Okładki, tubusy</h3><small>okładki i tubusy na dyplomy</small></div></a><a class="kafel" href="sklep-kroniki.html"><img src="img/ksiega-480.webp" srcset="img/ksiega-480.webp 480w, img/ksiega-700.webp 700w" sizes="(min-width:1020px) 290px, (min-width:641px) 31vw, 46vw" width="480" height="480" loading="lazy" decoding="async" alt="Kroniki, księgi"><div class="t"><h3>Kroniki, księgi</h3><small>kroniki, księgi pamiątkowe i gości</small></div></a><a class="kafel" href="sklep-albumy.html"><img src="img/album-czerwony-480.webp" srcset="img/album-czerwony-480.webp 480w, img/album-czerwony-900.webp 900w" sizes="(min-width:1020px) 290px, (min-width:641px) 31vw, 46vw" width="480" height="480" loading="lazy" decoding="async" alt="Albumy"><div class="t"><h3>Albumy</h3><small>tradycyjne i ofertowe</small></div></a><a class="kafel" href="sklep-dla-restauracji-i-hoteli.html"><img src="img/menu-480.webp" srcset="img/menu-480.webp 480w, img/menu-900.webp 900w" sizes="(min-width:1020px) 290px, (min-width:641px) 31vw, 46vw" width="480" height="480" loading="lazy" decoding="async" alt="Galanteria dla restauracji i hoteli"><div class="t"><h3>Galanteria dla restauracji i hoteli</h3><small>karty menu, płatniki, księgi rezerwacji</small></div></a><a class="kafel" href="sklep-etui.html"><img src="img/etui-cd-400.webp" srcset="img/etui-cd-400.webp 400w" sizes="(min-width:1020px) 290px, (min-width:641px) 31vw, 46vw" width="400" height="400" loading="lazy" decoding="async" alt="Etui"><div class="t"><h3>Etui</h3><small>na dokumenty, legitymacje, płyty</small></div></a><a class="kafel" href="sklep-organizery.html"><img src="img/organizer-480.webp" srcset="img/organizer-480.webp 480w, img/organizer-900.webp 900w" sizes="(min-width:1020px) 290px, (min-width:641px) 31vw, 46vw" width="480" height="480" loading="lazy" decoding="async" alt="Organizery"><div class="t"><h3>Organizery</h3><small>A-4, A-5, standard, mini, mikro</small></div></a><a class="kafel" href="sklep-kalendarze.html"><img src="img/kalendarz-480.webp" srcset="img/kalendarz-480.webp 480w, img/kalendarz-900.webp 900w" sizes="(min-width:1020px) 290px, (min-width:641px) 31vw, 46vw" width="480" height="480" loading="lazy" decoding="async" alt="Kalendarze"><div class="t"><h3>Kalendarze</h3><small>oprawa drukowana, ekoskóra i skóra</small></div></a><a class="kafel" href="sklep-teczki.html"><img src="img/teczka-480.webp" srcset="img/teczka-480.webp 480w, img/teczka-900.webp 900w" sizes="(min-width:1020px) 290px, (min-width:641px) 31vw, 46vw" width="480" height="480" loading="lazy" decoding="async" alt="Teczki"><div class="t"><h3>Teczki</h3><small>ofertówki, konferencyjne, skórzane</small></div></a></div>
   <a class="btn ciemny wiecej" href="sklep.html">Wszystkie kategorie (27)</a>
  </div>
 </section>

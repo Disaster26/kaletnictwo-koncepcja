@@ -231,6 +231,15 @@ section.ciasna{padding:64px 0}
 .boczne li a.on,.boczne li a:hover{color:var(--br);font-weight:600}
 .boczne ul ul{padding-left:14px}
 .boczne ul ul a{font-size:14.5px;color:var(--tx2)}
+.boczne{max-height:calc(100vh - 110px);overflow:auto}
+.boczne .bk{display:block;width:100%;text-align:left;background:none;border:0;padding:0 0 8px;font:600 18px Jost,sans-serif;color:var(--br);pointer-events:none}
+.boczne li.ma>ul{display:none}.boczne li.ma.otw>ul{display:block}
+.boczne .w{display:flex;align-items:stretch;border-bottom:1px dashed #e2d6c9}
+.boczne .w a{flex:1;border-bottom:0!important}
+.boczne .rz{flex:0 0 36px;border:0;background:none;cursor:pointer;position:relative;color:var(--br)}
+.boczne .rz::before,.boczne .rz::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.6px;background:currentColor;transform:translate(-50%,-50%)}
+.boczne .rz::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .2s}
+.boczne li.otw>.w .rz::after{transform:translate(-50%,-50%) rotate(0)}
 .kat{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .kafel{background:#fff;border:1px solid #e3dfda;border-radius:6px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:border-color .2s,transform .2s}
 .kafel:hover{border-color:var(--br);transform:translateY(-2px)}
@@ -333,7 +342,13 @@ section.ciasna{padding:64px 0}
 .lista-n h3{font-size:19px;margin-bottom:4px;padding-top:6px}
 @media (max-width:1020px){
  .uk{grid-template-columns:1fr;gap:28px}
- .boczne{display:none}
+ .boczne{position:static;max-height:none;padding:0}
+ .boczne .bk{pointer-events:auto;padding:15px 18px;display:flex;justify-content:space-between;align-items:center}
+ .boczne .bk::after{content:"";width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-top:-4px;transition:transform .2s}
+ .boczne.otw .bk::after{transform:rotate(-135deg);margin-top:4px}
+ .boczne .korzen{display:none;padding:0 18px 12px}
+ .boczne.otw .korzen{display:block}
+ .boczne .rz{flex-basis:46px}
  .kat{grid-template-columns:repeat(3,1fr)}
  .prod{grid-template-columns:1fr 1fr}
  .karta,.opis-p,.kto{grid-template-columns:1fr;gap:34px}
@@ -356,7 +371,6 @@ section.ciasna{padding:64px 0}
  .drzewo{columns:1}
  .dwie{grid-template-columns:1fr}
  .miniatury{grid-template-columns:repeat(4,1fr)}
- .boczne{padding:16px 18px}
 }
 /* wersja 2: jasna, nowoczesna szata, brąz z logo jako akcent */
 :root{--tlo:#faf8f5;--tlo2:#f2ede6;--linia:#e7e0d7}
@@ -640,7 +654,7 @@ footer{background:#2b1b0d}
  <div><h2>Pracownia</h2><ul><li><a href="index.html">Strona główna</a></li><li><a href="o-nas.html">O nas</a></li><li><a href="znakowanie.html">Znakowanie</a></li><li><a href="realizacje.html">Realizacje</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
  <div><h2>Zakupy</h2><ul><li><a href="jak-kupowac.html">Jak kupować</a></li><li><a href="dostawa-i-platnosci.html">Dostawa i płatności</a></li><li><a href="zwroty-i-reklamacje.html">Zwroty i reklamacje</a></li><li><a href="regulamin.html">Regulamin sklepu</a></li><li><a href="polityka-prywatnosci.html">Polityka prywatności i cookies</a></li></ul></div>
  <div><h2>Konto klienta</h2><ul><li><a href="konto.html">Moje konto</a></li><li><a href="koszyk.html">Koszyk</a></li><li><a href="ulubione.html">Ulubione</a></li><li><a href="wyszukiwarka.html">Wyszukiwarka</a></li></ul></div>
- <div><h2>Sklep: kategorie</h2><ul><li><a href="sklep.html">Wszystkie kategorie</a></li><li><a href="sklep-dla-restauracji-i-hoteli.html">Dla restauracji i hoteli</a></li><li><a href="sklep-teczki.html">Teczki</a></li><li><a href="sklep-organizery.html">Organizery</a></li><li><a href="sklep-kalendarze.html">Kalendarze</a></li><li><a href="sklep-notesy.html">Notesy</a></li><li><a href="sklep-spirala.html">Oprawa w spiralę</a></li><li><a href="sklep-albumy.html">Albumy</a></li><li><a href="sklep-fotoksiegi.html">Fotoksiążki, fotoksięgi</a></li><li><a href="sklep-kroniki.html">Kroniki, księgi</a></li><li><a href="sklep-okladki.html">Okładki, tubusy</a></li><li><a href="sklep-etui.html">Etui</a></li><li><a href="sklep-wizytowniki.html">Wizytowniki</a></li><li><a href="sklep-podklady.html">Podkłady na biurko</a></li><li><a href="sklep-skorowidze.html">Skorowidze</a></li><li><a href="sklep-wklady.html">Wkłady</a></li><li><a href="sklep-portfele.html">Portfele</a></li><li><a href="sklep-portmonetki.html">Portmonetki</a></li><li><a href="sklep-kolekcjonerzy.html">Dla kolekcjonerów</a></li><li><a href="sklep-puchary.html">Puchary i trofea</a></li><li><a href="sklep-gadzety.html">Gadżety</a></li><li><a href="sklep-zestawy.html">Zestawy produktów</a></li><li><a href="sklep-rozne.html">Różne</a></li><li><a href="sklep-nowosci.html">Nowości</a></li><li><a href="sklep-wzorniki.html">Wzorniki materiałów</a></li><li><a href="sklep-idealne.html">Idealne rozwiązania</a></li><li><a href="sklep-opcje.html">Galeria opcji dodatkowych</a></li></ul></div>
+ <div><h2>Sklep: kategorie</h2><ul><li><a href="sklep.html">Wszystkie kategorie</a></li><li><a href="sklep-okladki.html">Okładki, tubusy</a></li><li><a href="sklep-podklady.html">Podkłady na biurko</a></li><li><a href="sklep-notesy.html">Notesy</a></li><li><a href="sklep-kroniki.html">Kroniki, księgi</a></li><li><a href="sklep-fotoksiegi.html">Fotoksiążki, fotoksięgi</a></li><li><a href="sklep-albumy.html">Albumy</a></li><li><a href="sklep-spirala.html">Oprawa w spiralę</a></li><li><a href="sklep-etui.html">Etui</a></li><li><a href="sklep-organizery.html">Organizery</a></li><li><a href="sklep-wizytowniki.html">Wizytowniki</a></li><li><a href="sklep-kalendarze.html">Kalendarze</a></li><li><a href="sklep-nowosci.html">Nowości</a></li><li><a href="sklep-teczki.html">Teczki</a></li><li><a href="sklep-skorowidze.html">Skorowidze</a></li><li><a href="sklep-rozne.html">Różne</a></li><li><a href="sklep-wklady.html">Wkłady</a></li><li><a href="sklep-kolekcjonerzy.html">Dla kolekcjonerów</a></li><li><a href="sklep-portfele.html">Portfele</a></li><li><a href="sklep-portmonetki.html">Portmonetki</a></li><li><a href="sklep-puchary.html">Puchary i trofea</a></li><li><a href="sklep-gadzety.html">Gadżety</a></li><li><a href="sklep-zestawy.html">Zestawy produktów</a></li><li><a href="sklep-wzorniki.html">Wzorniki materiałów</a></li><li><a href="sklep-idealne.html">Idealne rozwiązania</a></li><li><a href="sklep-opcje.html">Galeria opcji dodatkowych</a></li><li><a href="sklep-dla-restauracji-i-hoteli.html">Dla restauracji i hoteli</a></li></ul></div>
  <div><h2>Przykładowy produkt</h2><ul><li><a href="produkt-okladka-na-menu-menu-15.html">Okładka na menu MENU-15 0715</a></li></ul></div>
 </div></div></section>
 </main>
